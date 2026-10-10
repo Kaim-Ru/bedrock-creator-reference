@@ -4,7 +4,7 @@
 <p>通常版の設定・更新・描画の処理と、公式サンプルを照合した内容。ゲーム内で全項目の表示テストを行った資料ではない。</p>
 <p><a href="jsonui.html">JSON UI全プロパティ解説</a> | <a href="material.html">material解説</a></p>
 <h2 id="index">Index</h2>
-<table border="1"><thead><tr><th>Name</th><th>Description</th><th>利用範囲</th></tr></thead><tbody><tr><td><a href="#r-3d_structure_renderer"><code>3d_structure_renderer</code></a></td><td>ストラクチャー用のプレビューサービスが管理するブロック領域を立体表示する。二つの座標配列から選択範囲を作る。</td><td>通常版</td></tr><tr><td><a href="#r-actor_portrait_renderer"><code>actor_portrait_renderer</code></a></td><td>ワールド内に存在するエンティティをIDで取得し、そのモデルをUI内へ描画する。種類名から新しいエンティティを生成する機能ではない。拡大・回転・移動・外見の変更はproperty_bagから指定する。</td><td>通常版</td></tr><tr><td><a href="#r-animated_gif_renderer"><code>animated_gif_renderer</code></a></td><td>GIFファイルを非同期で読み、GIFが持つフレームと表示時間に従って再生する。画像用textureではなく#gif_pathを使う。</td><td>通常版</td></tr><tr><td><a href="#r-armor_renderer"><code>armor_renderer</code></a></td><td>現在のローカルプレイヤーの防具ポイントを、満タン・半分・空の防具アイコンに分解して表示する。任意の防具値をJSONから入力するrendererではない。</td><td>通常版</td></tr><tr><td><a href="#r-background_renderer"><code>background_renderer</code></a></td><td>ゲームの画面領域全体に半透明の黒い背景を描く専用部品。通常の任意色panelではない。</td><td>通常版</td></tr><tr><td><a href="#r-banner_pattern_renderer"><code>banner_pattern_renderer</code></a></td><td>旗の模様と色を平面のプレビューとして描画する。模様を順番に重ねる。</td><td>通常版</td></tr><tr><td><a href="#r-bohr_model_renderer"><code>bohr_model_renderer</code></a></td><td>Educationの原子モデル。陽子・中性子を核に、電子を周囲の殻へ配置して動かす。粒子数はproperty_bagに#なしで渡す。</td><td>通常版</td></tr><tr><td><a href="#r-bubbles_renderer"><code>bubbles_renderer</code></a></td><td>プレイヤーの残り空気を10個の気泡として描画する。水中状態・ゲームモード・残り空気に従い、満タンの気泡、破裂中の気泡、空になった表示を切り替える。</td><td>通常版</td></tr><tr><td><a href="#r-bundle_tooltip_renderer"><code>bundle_tooltip_renderer</code></a></td><td>バンドル説明の子UIを、入力方式に合ったカーソル位置へ追従させる。中身のアイテム一覧・名前・重量バーは子UIが描く。</td><td>通常版</td></tr><tr><td><a href="#r-camera_renderer"><code>camera_renderer</code></a></td><td>Education等のゲーム内カメラ撮影に連動した画面効果を描画する。撮影開始・撮影中・終了の状態に応じて矩形・グラデーション等を更新する。</td><td>通常版</td></tr><tr><td><a href="#r-credits_renderer"><code>credits_renderer</code></a></td><td>タイトル画像、エンドポエム、スタッフロール、引用文を組み立て、時間に応じて下から上へスクロールする。通常プロパティはend_event。background_color/foreground_colorはこのrendererの属性ではない。</td><td>通常版</td></tr><tr><td><a href="#r-cursor_renderer"><code>cursor_renderer</code></a></td><td>ゲームの現在の入力状態とカーソル位置に応じたカーソル表示を行う。画像の読込先はtextures/ui/cross_hair、描画materialはui_crosshair。</td><td>通常版</td></tr><tr><td><a href="#r-dash_renderer"><code>dash_renderer</code></a></td><td>ラクダ等のダッシュ対応騎乗中のチャージ・クールダウンバーを描画する。ローカルプレイヤーの騎乗先とジャンプ/チャージ状態を直接使う。</td><td>通常版</td></tr><tr><td><a href="#r-debug_screen_renderer"><code>debug_screen_renderer</code></a></td><td>ゲームのデバッグ表示サービスへ描画を委譲する。通常のlabelのように任意のtextを渡してデバッグ画面を作るrendererではない。</td><td>通常版</td></tr><tr><td><a href="#r-editor_compass_renderer"><code>editor_compass_renderer</code></a></td><td>エディターのカメラの向きに合わせて方位・軸を表示する。</td><td>通常版</td></tr><tr><td><a href="#r-editor_gizmo_renderer"><code>editor_gizmo_renderer</code></a></td><td>エディターが管理する操作用ギズモを表示する。現在の編集対象・操作状態に従って表示する形と色が決まる。</td><td>通常版</td></tr><tr><td><a href="#r-editor_volume_highlight_renderer"><code>editor_volume_highlight_renderer</code></a></td><td>エディターの選択・ハイライト領域を表示する。領域ごとに輪郭とオーバーレイを描く。</td><td>通常版</td></tr><tr><td><a href="#r-enchanting_book_renderer"><code>enchanting_book_renderer</code></a></td><td>エンチャント台の本モデルをUI内へ立体表示し、開閉とページの動きをアニメーションする。</td><td>通常版</td></tr><tr><td><a href="#r-equipment_preview_renderer"><code>equipment_preview_renderer</code></a></td><td>装備アイテムをプレビュー用の防具立てモデルへ装着して立体表示する。通常のインベントリアイコンとは異なる。</td><td>通常版</td></tr><tr><td><a href="#r-flying_item_renderer"><code>flying_item_renderer</code></a></td><td>インベントリ内のアイテム移動時に、出発位置から到着位置へアイコンを飛ばす。番号付きのproperty_bagキーで複数の移動を渡す。</td><td>通常版</td></tr><tr><td><a href="#r-gradient_renderer"><code>gradient_renderer</code></a></td><td>画像を使わず矩形の二端の色を補間して描画する。縦は上color1→下color2、横は左color1→右color2。専用#入力を読む処理はなく、color1/color2/gradient_directionとコントロールの位置・大きさ・alphaを使用する。</td><td>通常版</td></tr><tr><td><a href="#r-heart_renderer"><code>heart_renderer</code></a></td><td>ローカルプレイヤーの現在体力・最大体力・吸収体力と状態異常に応じて、体力アイコンを複数行に描く。</td><td>通常版</td></tr><tr><td><a href="#r-horse_heart_renderer"><code>horse_heart_renderer</code></a></td><td>乗っている生物の体力を表示する。乗り物を持たない状態や体力表示対象でない騎乗先では表示しない。</td><td>通常版</td></tr><tr><td><a href="#r-horse_jump_renderer"><code>horse_jump_renderer</code></a></td><td>ジャンプできる騎乗先に乗っているときのジャンプチャージバーを描く。任意の進捗値を与えるバーではない。</td><td>通常版</td></tr><tr><td><a href="#r-hotbar_cooldown_renderer"><code>hotbar_cooldown_renderer</code></a></td><td>ホットバースロットのアイテムがクールダウン中のとき、そのスロットにオーバーレイを描く。</td><td>通常版</td></tr><tr><td><a href="#r-hotbar_renderer"><code>hotbar_renderer</code></a></td><td>各ホットバースロットに関連する操作中の表示を描く。ホットバー全体の背景・アイテムモデル・個数表示を一括生成する部品ではない。</td><td>通常版</td></tr><tr><td><a href="#r-hover_text_renderer"><code>hover_text_renderer</code></a></td><td>#hover_textの文字列をゲームのツールチップ機構へ渡す。現在の入力方式やカーソル／選択位置を使って説明を表示する。ホバー判定そのものを作るrendererではない。</td><td>通常版</td></tr><tr><td><a href="#r-hud_player_renderer"><code>hud_player_renderer</code></a></td><td>HUD用の現在プレイヤーモデルを描く。スキン・装備・状態・ポーズを実プレイヤーから取得し、HUDとして必要な間だけ表示する。</td><td>通常版</td></tr><tr><td><a href="#r-hunger_renderer"><code>hunger_renderer</code></a></td><td>現在プレイヤーの食料値を10個の満腹度アイコンで表示する。</td><td>通常版</td></tr><tr><td><a href="#r-inventory_item_renderer"><code>inventory_item_renderer</code></a></td><td>アイテムデータからアイコン・モデル・エンチャントの光沢を描画する。旗・盾・壺・防具などの追加データに応じて外見を変える。個数ラベル・耐久バー・クリック操作は子部品等で別に作る。</td><td>通常版</td></tr><tr><td><a href="#r-live_horse_renderer"><code>live_horse_renderer</code></a></td><td>#entity_idで取得した生きたエンティティを、馬のプレビューとしてUI内へ描画する。</td><td>通常版</td></tr><tr><td><a href="#r-live_player_renderer"><code>live_player_renderer</code></a></td><td>ローカルプレイヤーをUI内に立体表示する。装備・スキン・動作などは現在のプレイヤーから取得する。</td><td>通常版</td></tr><tr><td><a href="#r-locator_bar"><code>locator_bar</code></a></td><td>他プレイヤーの方角をドットと上下矢印で表示するlocator bar。ゲームが管理するロケーター対象一覧を使い、JSONで対象配列を作る部品ではない。</td><td>通常版</td></tr><tr><td><a href="#r-mob_effects_renderer"><code>mob_effects_renderer</code></a></td><td>実プレイヤーの有効なステータス効果をアイコンとして並べる。効果名をJSONの配列で入力するrendererではない。</td><td>通常版</td></tr><tr><td><a href="#r-name_tag_renderer"><code>name_tag_renderer</code></a></td><td>#playernameを名前タグとして表示し、背後に矩形を描画する。文字列が変わると文字の表示を更新する。</td><td>通常版</td></tr><tr><td><a href="#r-panorama_renderer"><code>panorama_renderer</code></a></td><td>imageとinput_panelの設定を読み込んだうえで、横長のパノラマ画像を描画する。横ドラッグと慣性による画像領域の移動を処理する。</td><td>通常版</td></tr><tr><td><a href="#r-paper_doll_renderer"><code>paper_doll_renderer</code></a></td><td>選択中のスキン、UUIDで指定されたプレイヤー、スキンパックの項目などをUI内に立体表示する。回転に加え、アニメーションと音の再生指示も受け取る。</td><td>通常版</td></tr><tr><td><a href="#r-profile_image_renderer"><code>profile_image_renderer</code></a></td><td>プロフィール画像を非同期に取得してUIへ描画する。#profile_image_optionsは子オブジェクトそのものではなく、JSONを含む文字列。typeによって画像の供給元と必要なIDが変わる。</td><td>通常版</td></tr><tr><td><a href="#r-progress_bar_renderer"><code>progress_bar_renderer</code></a></td><td>property_bagに接続した現在量と総量を割り、横方向の塗りつぶしバーを描く。スタック分割・耐久度・収納量に同じrendererが使われる。</td><td>通常版</td></tr><tr><td><a href="#r-progress_indicator_renderer"><code>progress_indicator_renderer</code></a></td><td>プレイヤー操作に連動するHUDの円形フィードバック表示。任意の #progress 値を与える一般的なローディングスピナーではない。</td><td>通常版</td></tr><tr><td><a href="#r-qr_code_renderer"><code>qr_code_renderer</code></a></td><td>#qr_code_contentの文字列をQRコード画像に変換し、コントロールの矩形へ描画する。内容や色が変わると画像を作り直す。空文字列ではQRを描かない。</td><td>通常版</td></tr><tr><td><a href="#r-splash_text_renderer"><code>splash_text_renderer</code></a></td><td>splashes.jsonから条件に合う文字列を1件選び、傾いた黄色いスプラッシュとして脈動させて描画する。textや#splash_textを読むrendererではない。</td><td>通常版</td></tr><tr><td><a href="#r-trial_time_renderer"><code>trial_time_renderer</code></a></td><td>体験版の残り時間を分:秒として表示する。値は体験ワールドの経過tickからゲーム側が計算する。</td><td>通常版</td></tr><tr><td><a href="#r-vignette_renderer"><code>vignette_renderer</code></a></td><td>画面の縁を暗くするビネット。通常はゲーム内の明るさ/状態から強さを求めるが、property_bagのopacity_overrideで計算元を上書きできる。</td><td>通常版</td></tr><tr><td><a href="#r-web_view_renderer"><code>web_view_renderer</code></a></td><td>ゲームが既に管理しているWebViewを、UIコントロールの矩形へ配置し、画面の状態に応じて表示／更新する。JSONにURLを書く汎用ブラウザーではない。</td><td>通常版</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="#r-3d_structure_renderer"><code>3d_structure_renderer</code></a></td><td>ストラクチャー用のプレビューサービスが管理するブロック領域を立体表示する。二つの座標配列から選択範囲を作る。</td></tr><tr><td><a href="#r-actor_portrait_renderer"><code>actor_portrait_renderer</code></a></td><td>ワールド内に存在するエンティティをIDで取得し、そのモデルをUI内へ描画する。種類名から新しいエンティティを生成する機能ではない。拡大・回転・移動・外見の変更はproperty_bagから指定する。</td></tr><tr><td><a href="#r-animated_gif_renderer"><code>animated_gif_renderer</code></a></td><td>GIFファイルを非同期で読み、GIFが持つフレームと表示時間に従って再生する。画像用textureではなく#gif_pathを使う。</td></tr><tr><td><a href="#r-armor_renderer"><code>armor_renderer</code></a></td><td>現在のローカルプレイヤーの防具ポイントを、満タン・半分・空の防具アイコンに分解して表示する。任意の防具値をJSONから入力するrendererではない。</td></tr><tr><td><a href="#r-background_renderer"><code>background_renderer</code></a></td><td>ゲームの画面領域全体に半透明の黒い背景を描く専用部品。通常の任意色panelではない。</td></tr><tr><td><a href="#r-banner_pattern_renderer"><code>banner_pattern_renderer</code></a></td><td>旗の模様と色を平面のプレビューとして描画する。模様を順番に重ねる。</td></tr><tr><td><a href="#r-bohr_model_renderer"><code>bohr_model_renderer</code></a></td><td>Educationの原子モデル。陽子・中性子を核に、電子を周囲の殻へ配置して動かす。粒子数はproperty_bagに#なしで渡す。</td></tr><tr><td><a href="#r-bubbles_renderer"><code>bubbles_renderer</code></a></td><td>プレイヤーの残り空気を10個の気泡として描画する。水中状態・ゲームモード・残り空気に従い、満タンの気泡、破裂中の気泡、空になった表示を切り替える。</td></tr><tr><td><a href="#r-bundle_tooltip_renderer"><code>bundle_tooltip_renderer</code></a></td><td>バンドル説明の子UIを、入力方式に合ったカーソル位置へ追従させる。中身のアイテム一覧・名前・重量バーは子UIが描く。</td></tr><tr><td><a href="#r-camera_renderer"><code>camera_renderer</code></a></td><td>Education等のゲーム内カメラ撮影に連動した画面効果を描画する。撮影開始・撮影中・終了の状態に応じて矩形・グラデーション等を更新する。</td></tr><tr><td><a href="#r-credits_renderer"><code>credits_renderer</code></a></td><td>タイトル画像、エンドポエム、スタッフロール、引用文を組み立て、時間に応じて下から上へスクロールする。通常プロパティはend_event。background_color/foreground_colorはこのrendererの属性ではない。</td></tr><tr><td><a href="#r-cursor_renderer"><code>cursor_renderer</code></a></td><td>ゲームの現在の入力状態とカーソル位置に応じたカーソル表示を行う。画像の読込先はtextures/ui/cross_hair、描画materialはui_crosshair。</td></tr><tr><td><a href="#r-dash_renderer"><code>dash_renderer</code></a></td><td>ラクダ等のダッシュ対応騎乗中のチャージ・クールダウンバーを描画する。ローカルプレイヤーの騎乗先とジャンプ/チャージ状態を直接使う。</td></tr><tr><td><a href="#r-debug_screen_renderer"><code>debug_screen_renderer</code></a></td><td>ゲームのデバッグ表示サービスへ描画を委譲する。通常のlabelのように任意のtextを渡してデバッグ画面を作るrendererではない。</td></tr><tr><td><a href="#r-editor_compass_renderer"><code>editor_compass_renderer</code></a></td><td>エディターのカメラの向きに合わせて方位・軸を表示する。</td></tr><tr><td><a href="#r-editor_gizmo_renderer"><code>editor_gizmo_renderer</code></a></td><td>エディターが管理する操作用ギズモを表示する。現在の編集対象・操作状態に従って表示する形と色が決まる。</td></tr><tr><td><a href="#r-editor_volume_highlight_renderer"><code>editor_volume_highlight_renderer</code></a></td><td>エディターの選択・ハイライト領域を表示する。領域ごとに輪郭とオーバーレイを描く。</td></tr><tr><td><a href="#r-enchanting_book_renderer"><code>enchanting_book_renderer</code></a></td><td>エンチャント台の本モデルをUI内へ立体表示し、開閉とページの動きをアニメーションする。</td></tr><tr><td><a href="#r-equipment_preview_renderer"><code>equipment_preview_renderer</code></a></td><td>装備アイテムをプレビュー用の防具立てモデルへ装着して立体表示する。通常のインベントリアイコンとは異なる。</td></tr><tr><td><a href="#r-flying_item_renderer"><code>flying_item_renderer</code></a></td><td>インベントリ内のアイテム移動時に、出発位置から到着位置へアイコンを飛ばす。番号付きのproperty_bagキーで複数の移動を渡す。</td></tr><tr><td><a href="#r-gradient_renderer"><code>gradient_renderer</code></a></td><td>画像を使わず矩形の二端の色を補間して描画する。縦は上color1→下color2、横は左color1→右color2。専用#入力を読む処理はなく、color1/color2/gradient_directionとコントロールの位置・大きさ・alphaを使用する。</td></tr><tr><td><a href="#r-heart_renderer"><code>heart_renderer</code></a></td><td>ローカルプレイヤーの現在体力・最大体力・吸収体力と状態異常に応じて、体力アイコンを複数行に描く。</td></tr><tr><td><a href="#r-horse_heart_renderer"><code>horse_heart_renderer</code></a></td><td>乗っている生物の体力を表示する。乗り物を持たない状態や体力表示対象でない騎乗先では表示しない。</td></tr><tr><td><a href="#r-horse_jump_renderer"><code>horse_jump_renderer</code></a></td><td>ジャンプできる騎乗先に乗っているときのジャンプチャージバーを描く。任意の進捗値を与えるバーではない。</td></tr><tr><td><a href="#r-hotbar_cooldown_renderer"><code>hotbar_cooldown_renderer</code></a></td><td>ホットバースロットのアイテムがクールダウン中のとき、そのスロットにオーバーレイを描く。</td></tr><tr><td><a href="#r-hotbar_renderer"><code>hotbar_renderer</code></a></td><td>各ホットバースロットに関連する操作中の表示を描く。ホットバー全体の背景・アイテムモデル・個数表示を一括生成する部品ではない。</td></tr><tr><td><a href="#r-hover_text_renderer"><code>hover_text_renderer</code></a></td><td>#hover_textの文字列をゲームのツールチップ機構へ渡す。現在の入力方式やカーソル／選択位置を使って説明を表示する。ホバー判定そのものを作るrendererではない。</td></tr><tr><td><a href="#r-hud_player_renderer"><code>hud_player_renderer</code></a></td><td>HUD用の現在プレイヤーモデルを描く。スキン・装備・状態・ポーズを実プレイヤーから取得し、HUDとして必要な間だけ表示する。</td></tr><tr><td><a href="#r-hunger_renderer"><code>hunger_renderer</code></a></td><td>現在プレイヤーの食料値を10個の満腹度アイコンで表示する。</td></tr><tr><td><a href="#r-inventory_item_renderer"><code>inventory_item_renderer</code></a></td><td>アイテムデータからアイコン・モデル・エンチャントの光沢を描画する。旗・盾・壺・防具などの追加データに応じて外見を変える。個数ラベル・耐久バー・クリック操作は子部品等で別に作る。</td></tr><tr><td><a href="#r-live_horse_renderer"><code>live_horse_renderer</code></a></td><td>#entity_idで取得した生きたエンティティを、馬のプレビューとしてUI内へ描画する。</td></tr><tr><td><a href="#r-live_player_renderer"><code>live_player_renderer</code></a></td><td>ローカルプレイヤーをUI内に立体表示する。装備・スキン・動作などは現在のプレイヤーから取得する。</td></tr><tr><td><a href="#r-locator_bar"><code>locator_bar</code></a></td><td>他プレイヤーの方角をドットと上下矢印で表示するlocator bar。ゲームが管理するロケーター対象一覧を使い、JSONで対象配列を作る部品ではない。</td></tr><tr><td><a href="#r-mob_effects_renderer"><code>mob_effects_renderer</code></a></td><td>実プレイヤーの有効なステータス効果をアイコンとして並べる。効果名をJSONの配列で入力するrendererではない。</td></tr><tr><td><a href="#r-name_tag_renderer"><code>name_tag_renderer</code></a></td><td>#playernameを名前タグとして表示し、背後に矩形を描画する。文字列が変わると文字の表示を更新する。</td></tr><tr><td><a href="#r-panorama_renderer"><code>panorama_renderer</code></a></td><td>imageとinput_panelの設定を読み込んだうえで、横長のパノラマ画像を描画する。横ドラッグと慣性による画像領域の移動を処理する。</td></tr><tr><td><a href="#r-paper_doll_renderer"><code>paper_doll_renderer</code></a></td><td>選択中のスキン、UUIDで指定されたプレイヤー、スキンパックの項目などをUI内に立体表示する。回転に加え、アニメーションと音の再生指示も受け取る。</td></tr><tr><td><a href="#r-profile_image_renderer"><code>profile_image_renderer</code></a></td><td>プロフィール画像を非同期に取得してUIへ描画する。#profile_image_optionsは子オブジェクトそのものではなく、JSONを含む文字列。typeによって画像の供給元と必要なIDが変わる。</td></tr><tr><td><a href="#r-progress_bar_renderer"><code>progress_bar_renderer</code></a></td><td>property_bagに接続した現在量と総量を割り、横方向の塗りつぶしバーを描く。スタック分割・耐久度・収納量に同じrendererが使われる。</td></tr><tr><td><a href="#r-progress_indicator_renderer"><code>progress_indicator_renderer</code></a></td><td>プレイヤー操作に連動するHUDの円形フィードバック表示。任意の #progress 値を与える一般的なローディングスピナーではない。</td></tr><tr><td><a href="#r-qr_code_renderer"><code>qr_code_renderer</code></a></td><td>#qr_code_contentの文字列をQRコード画像に変換し、コントロールの矩形へ描画する。内容や色が変わると画像を作り直す。空文字列ではQRを描かない。</td></tr><tr><td><a href="#r-splash_text_renderer"><code>splash_text_renderer</code></a></td><td>splashes.jsonから条件に合う文字列を1件選び、傾いた黄色いスプラッシュとして脈動させて描画する。textや#splash_textを読むrendererではない。</td></tr><tr><td><a href="#r-trial_time_renderer"><code>trial_time_renderer</code></a></td><td>体験版の残り時間を分:秒として表示する。値は体験ワールドの経過tickからゲーム側が計算する。</td></tr><tr><td><a href="#r-vignette_renderer"><code>vignette_renderer</code></a></td><td>画面の縁を暗くするビネット。通常はゲーム内の明るさ/状態から強さを求めるが、property_bagのopacity_overrideで計算元を上書きできる。</td></tr><tr><td><a href="#r-web_view_renderer"><code>web_view_renderer</code></a></td><td>ゲームが既に管理しているWebViewを、UIコントロールの矩形へ配置し、画面の状態に応じて表示／更新する。JSONにURLを書く汎用ブラウザーではない。</td></tr></tbody></table>
 <h2 id="usage">指定場所と描画の流れ</h2>
 <p>type:customとrendererで描画器を選び、size・offset・anchor等で表示領域を決める。通常プロパティはコントロールの直下、データ入力はproperty_bagまたはbindingの出力先へ置く。rendererがゲーム実体を直接使う場合、独自の#名を加えても対象のプレイヤー等の状態は変えられない。</p>
 <p>設定 → binding / property_bagの値 → 対象のアイテム・モデル・画像の取得 → コントロールの矩形へ描画、という順で働く。個数ラベル・耐久バー・クリック用ボタンは別の子部品が担当する場合がある。</p>
@@ -27,7 +27,7 @@
 <p>キーと型は各rendererの表に従う。数値・真偽値は引用符を付けない。JSON文字列、模様の区切り付き文字列、整数のPoseはそれぞれ異なる形式で、同じようにオブジェクトへ変換して渡すことはできない。</p>
 <h2 id="r-3d_structure_renderer">3d_structure_renderer</h2>
 <p>ストラクチャー用のプレビューサービスが管理するブロック領域を立体表示する。二つの座標配列から選択範囲を作る。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;3d_structure_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;3d_structure_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#bottom_left_block</code></td><td>integer[3]</td><td><code>[]</code></td><td>領域の一方の端。[x,y,z]の整数3要素。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#top_right_block</code></td><td>integer[3]</td><td><code>[]</code></td><td>領域のもう一方の端。[x,y,z]の整数3要素。各軸で二つの座標の小さい方を下限、大きい方を上限にする。両配列が3要素の場合に領域を使用する。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -114,7 +114,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-actor_portrait_renderer">actor_portrait_renderer</h2>
 <p>ワールド内に存在するエンティティをIDで取得し、そのモデルをUI内へ描画する。種類名から新しいエンティティを生成する機能ではない。拡大・回転・移動・外見の変更はproperty_bagから指定する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;actor_portrait_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;actor_portrait_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>scale_x</code></td><td>number</td><td><code>1</code></td><td>X軸方向のモデル拡大率。1で元の倍率、2で2倍。UIのsizeとは別のモデル変形。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>scale_y</code></td><td>number</td><td><code>1</code></td><td>Y軸方向のモデル拡大率。1で元の倍率、2で2倍。UIのsizeとは別のモデル変形。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>scale_z</code></td><td>number</td><td><code>1</code></td><td>Z軸方向のモデル拡大率。1で元の倍率、2で2倍。UIのsizeとは別のモデル変形。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>rotate_x</code></td><td>number</td><td><code>0</code></td><td>X軸を中心とするモデルの回転量。rotate_modeの自動回転とは別に指定する初期の姿勢。 単位は度。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>rotate_y</code></td><td>number</td><td><code>0</code></td><td>Y軸を中心とするモデルの回転量。rotate_modeの自動回転とは別に指定する初期の姿勢。 単位は度。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>rotate_z</code></td><td>number</td><td><code>0</code></td><td>Z軸を中心とするモデルの回転量。rotate_modeの自動回転とは別に指定する初期の姿勢。 単位は度。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>translate_x</code></td><td>number</td><td><code>0</code></td><td>X軸方向のモデル移動量。画面コントロールのoffsetではなくモデルに適用する移動。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>translate_y</code></td><td>number</td><td><code>0</code></td><td>Y軸方向のモデル移動量。画面コントロールのoffsetではなくモデルに適用する移動。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>translate_z</code></td><td>number</td><td><code>0</code></td><td>Z軸方向のモデル移動量。画面コントロールのoffsetではなくモデルに適用する移動。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>actor_id</code></td><td>integer</td><td><code>0</code></td><td>現在のワールドのエンティティID。対象が存在し、描画できる状態の場合に表示する。minecraft:catのような種類名や文字列IDではない。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>use_live_animation</code></td><td>boolean</td><td><code>false</code></td><td>対象の実際のアニメーション状態を使う。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>rotate_mode</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>自動回転はautoとの完全一致で有効になる。その他の文字列は自動回転なし。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>skin</code></td><td>JSONを格納したstring</td><td><code>&quot;&quot;</code></td><td>外見のバリエーションを上書きするJSON文字列。オブジェクトを直接渡す形式ではない。二つの子キーだけを読む。</td><td>property_bag（#を付けない）</td></tr></tbody></table>
@@ -176,7 +176,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-animated_gif_renderer">animated_gif_renderer</h2>
 <p>GIFファイルを非同期で読み、GIFが持つフレームと表示時間に従って再生する。画像用textureではなく#gif_pathを使う。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;animated_gif_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;animated_gif_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#gif_path</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>GIFファイルのパス。画面が持つファイルサービスへ読込モードrbで渡す。空文字列では描画対象を作らない。パスが変わると再読み込みする。texture_file_systemを選ぶ専用入力はこのrendererにはない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#pause_gif</code></td><td>boolean</td><td><code>false</code></td><td>trueで通常のフレーム更新を止め、falseで再生する。初回ロード直後のフレーム準備はこの値とは別に行われる。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -217,7 +217,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-armor_renderer">armor_renderer</h2>
 <p>現在のローカルプレイヤーの防具ポイントを、満タン・半分・空の防具アイコンに分解して表示する。任意の防具値をJSONから入力するrendererではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;armor_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;armor_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#use_heart_offset</code></td><td>boolean</td><td><code>true</code></td><td>property_bagで指定する。trueなら体力行数の計算に吸収体力も加える。falseなら吸収体力を加算しない。通常の最大体力による行の計算と移動は残るため、falseが「すべての位置調整をゼロにする」という意味ではない。体力アイコンは10個単位の行になり、UIプロファイルに応じて1行10 UI単位の正負の移動を行う。</td><td>property_bag</td></tr></tbody></table>
@@ -249,7 +249,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-background_renderer">background_renderer</h2>
 <p>ゲームの画面領域全体に半透明の黒い背景を描く専用部品。通常の任意色panelではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;background_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;background_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -260,7 +260,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-banner_pattern_renderer">banner_pattern_renderer</h2>
 <p>旗の模様と色を平面のプレビューとして描画する。模様を順番に重ねる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;banner_pattern_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;banner_pattern_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#banner_patterns</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>模様番号の区切り付き文字列。各番号の末尾に_。例0_1_。最初に0（base）を入れると地色の層を指定できる。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#banner_colors</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>各層に対応する染料番号の区切り付き文字列。例15_1_。#banner_patternsと項目数・順番をそろえる。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -314,7 +314,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-bohr_model_renderer">bohr_model_renderer</h2>
 <p>Educationの原子モデル。陽子・中性子を核に、電子を周囲の殻へ配置して動かす。粒子数はproperty_bagに#なしで渡す。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bohr_model_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bohr_model_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>electron_count</code></td><td>integer</td><td><code>0</code></td><td>表示する電子数。非負の整数で指定する。殻を内側から埋め、最初の殻は2、次は8、その次は18の電子を収容する。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>proton_count</code></td><td>integer</td><td><code>0</code></td><td>核に配置する陽子数。非負の整数で指定する。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>neutron_count</code></td><td>integer</td><td><code>0</code></td><td>核に配置する中性子数。非負の整数で指定する。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>init_model</code></td><td>boolean</td><td><code>false</code></td><td>trueを受け取るとモデルの初期化・アニメーションのリセットを行い、読み取り後にfalseへ戻す。一度の操作を要求するフラグ。</td><td>property_bag（#を付けない）</td></tr></tbody></table>
@@ -343,7 +343,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-bubbles_renderer">bubbles_renderer</h2>
 <p>プレイヤーの残り空気を10個の気泡として描画する。水中状態・ゲームモード・残り空気に従い、満タンの気泡、破裂中の気泡、空になった表示を切り替える。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bubbles_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bubbles_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -367,7 +367,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-bundle_tooltip_renderer">bundle_tooltip_renderer</h2>
 <p>バンドル説明の子UIを、入力方式に合ったカーソル位置へ追従させる。中身のアイテム一覧・名前・重量バーは子UIが描く。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bundle_tooltip_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;bundle_tooltip_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -393,7 +393,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-camera_renderer">camera_renderer</h2>
 <p>Education等のゲーム内カメラ撮影に連動した画面効果を描画する。撮影開始・撮影中・終了の状態に応じて矩形・グラデーション等を更新する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;camera_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;camera_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -412,7 +412,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-credits_renderer">credits_renderer</h2>
 <p>タイトル画像、エンドポエム、スタッフロール、引用文を組み立て、時間に応じて下から上へスクロールする。通常プロパティはend_event。background_color/foreground_colorはこのrendererの属性ではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;credits_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;credits_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>end_event</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>スクロールが全内容の末尾へ達したときに発行するUIイベント名。公式テンプレートはscroll_end。任意のイベント名を指定できるが、受け手を別途用意する必要がある。</td><td>コントロールの直下</td></tr></tbody></table>
 <h3>データ入力・property_bag</h3>
@@ -454,7 +454,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-cursor_renderer">cursor_renderer</h2>
 <p>ゲームの現在の入力状態とカーソル位置に応じたカーソル表示を行う。画像の読込先はtextures/ui/cross_hair、描画materialはui_crosshair。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;cursor_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;cursor_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -478,7 +478,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-dash_renderer">dash_renderer</h2>
 <p>ラクダ等のダッシュ対応騎乗中のチャージ・クールダウンバーを描画する。ローカルプレイヤーの騎乗先とジャンプ/チャージ状態を直接使う。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;dash_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;dash_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>replaced_while_inactive</code></td><td>boolean</td><td><code>false</code></td><td>非作動時に他のHUDバーへ置き換える構成で使う。trueでは通常の作動条件を満たしていない間の描画を抑える。falseでは対応する騎乗状態などに応じて非作動中のバーも描画できる。これは別rendererを自動生成する設定ではなく、同じ位置に置いた経験値バー・locator barなどとの表示条件を合わせるための設定。</td><td>control直下</td></tr></tbody></table>
 <h4>replaced_while_inactiveの入力値</h4>
@@ -498,7 +498,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-debug_screen_renderer">debug_screen_renderer</h2>
 <p>ゲームのデバッグ表示サービスへ描画を委譲する。通常のlabelのように任意のtextを渡してデバッグ画面を作るrendererではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;debug_screen_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;debug_screen_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -516,7 +516,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-editor_compass_renderer">editor_compass_renderer</h2>
 <p>エディターのカメラの向きに合わせて方位・軸を表示する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_compass_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_compass_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -535,7 +535,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-editor_gizmo_renderer">editor_gizmo_renderer</h2>
 <p>エディターが管理する操作用ギズモを表示する。現在の編集対象・操作状態に従って表示する形と色が決まる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_gizmo_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_gizmo_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -554,7 +554,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-editor_volume_highlight_renderer">editor_volume_highlight_renderer</h2>
 <p>エディターの選択・ハイライト領域を表示する。領域ごとに輪郭とオーバーレイを描く。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_volume_highlight_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;editor_volume_highlight_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -574,7 +574,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-enchanting_book_renderer">enchanting_book_renderer</h2>
 <p>エンチャント台の本モデルをUI内へ立体表示し、開閉とページの動きをアニメーションする。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;enchanting_book_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;enchanting_book_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#open</code></td><td>boolean</td><td><code>false</code></td><td>本を開く状態にする。falseでは閉じる状態へ移行する。即時に別画像へ切り替える処理ではなく、時間経過で開閉を補間する。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -601,7 +601,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-equipment_preview_renderer">equipment_preview_renderer</h2>
 <p>装備アイテムをプレビュー用の防具立てモデルへ装着して立体表示する。通常のインベントリアイコンとは異なる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;equipment_preview_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;equipment_preview_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>rotation_x</code></td><td>number</td><td><code>0</code></td><td>プレビューのX軸回転角。 単位は度。</td><td>コントロールの直下</td></tr><tr><td><code>rotation_y</code></td><td>number</td><td><code>0</code></td><td>プレビューのY軸回転角。 単位は度。</td><td>コントロールの直下</td></tr></tbody></table>
 <h3>データ入力・property_bag</h3>
@@ -645,7 +645,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-flying_item_renderer">flying_item_renderer</h2>
 <p>インベントリ内のアイテム移動時に、出発位置から到着位置へアイコンを飛ばす。番号付きのproperty_bagキーで複数の移動を渡す。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;flying_item_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;flying_item_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>flying_item_count</code></td><td>integer</td><td><code>0</code></td><td>今回追加する飛行アイテム数。読み取り後0へ戻る。同じ名前に#を付けない。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_id_aux{i}</code></td><td>integer</td><td><code>0</code></td><td>アイテムの種類番号を上位16ビット、補助値を下位15ビットにまとめた整数。下位の32768のフラグはエンチャントの光沢を表す。種類番号は対象バージョンのゲームが供給する値を使う。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_id_aux0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_origin_position_x{i}</code></td><td>number</td><td><code>0</code></td><td>出発位置のX座標。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_origin_position_x0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_origin_position_y{i}</code></td><td>number</td><td><code>0</code></td><td>出発位置のY座標。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_origin_position_y0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_origin_scale{i}</code></td><td>number</td><td><code>1</code></td><td>出発時の表示倍率。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_origin_scale0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_destination_position_x{i}</code></td><td>number</td><td><code>0</code></td><td>到着位置のX座標。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_destination_position_x0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_destination_position_y{i}</code></td><td>number</td><td><code>0</code></td><td>到着位置のY座標。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_destination_position_y0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_destination_scale{i}</code></td><td>number</td><td><code>1</code></td><td>到着時の表示倍率。 {i}には0からflying_item_count-1の整数を、そのまま末尾へ連結する。例flying_item_destination_scale0。</td><td>property_bag（#を付けない）</td></tr><tr><td><code>flying_item_user_data{i}</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>飛行するアイテムの付加データをBase64文字列で渡す。{i}は項目番号。画面が生成する値をそのまま引き継ぐ。JSONオブジェクトやtextureのパスではない。</td><td>property_bag（#を付けない）</td></tr></tbody></table>
@@ -683,7 +683,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-gradient_renderer">gradient_renderer</h2>
 <p>画像を使わず矩形の二端の色を補間して描画する。縦は上color1→下color2、横は左color1→右color2。専用#入力を読む処理はなく、color1/color2/gradient_directionとコントロールの位置・大きさ・alphaを使用する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;gradient_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;gradient_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>gradient_direction</code></td><td>string</td><td><code>&quot;vertical&quot;</code></td><td>補間方向。動作はhorizontalとの完全一致だけを横と判定し、それ以外は縦にする。正規の選択肢は次の2つ。</td><td>コントロールの直下</td></tr><tr><td><code>color1</code></td><td>RGBA arrayまたは色名</td><td><code>[1, 1, 1, 1]</code></td><td>始点の色。alphaも補間し、さらにコントロールの実効alphaを掛ける。</td><td>コントロールの直下</td></tr><tr><td><code>color2</code></td><td>RGBA arrayまたは色名</td><td><code>[1, 1, 1, 1]</code></td><td>終点の色。</td><td>コントロールの直下</td></tr></tbody></table>
 <h4>gradient_directionの入力値</h4>
@@ -719,7 +719,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-heart_renderer">heart_renderer</h2>
 <p>ローカルプレイヤーの現在体力・最大体力・吸収体力と状態異常に応じて、体力アイコンを複数行に描く。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;heart_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;heart_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -750,7 +750,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-horse_heart_renderer">horse_heart_renderer</h2>
 <p>乗っている生物の体力を表示する。乗り物を持たない状態や体力表示対象でない騎乗先では表示しない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;horse_heart_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;horse_heart_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -774,7 +774,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-horse_jump_renderer">horse_jump_renderer</h2>
 <p>ジャンプできる騎乗先に乗っているときのジャンプチャージバーを描く。任意の進捗値を与えるバーではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;horse_jump_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;horse_jump_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>replaced_while_inactive</code></td><td>boolean</td><td><code>false</code></td><td>非作動時に他のHUDバーへ置き換える構成で使う。trueでは通常の作動条件を満たしていない間の描画を抑える。falseでは対応する騎乗状態などに応じて非作動中のバーも描画できる。これは別rendererを自動生成する設定ではなく、同じ位置に置いた経験値バー・locator barなどとの表示条件を合わせるための設定。</td><td>control直下</td></tr></tbody></table>
 <h4>replaced_while_inactiveの入力値</h4>
@@ -794,7 +794,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-hotbar_cooldown_renderer">hotbar_cooldown_renderer</h2>
 <p>ホットバースロットのアイテムがクールダウン中のとき、そのスロットにオーバーレイを描く。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hotbar_cooldown_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hotbar_cooldown_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#collection_index</code></td><td>integer</td><td>-1（欠落時）</td><td>現在のcollection項目の0起点番号。通常はcollection_detailsとcollection部品が作る項目情報を使う。hotbar_rendererの共通描画経路はこの番号とゲーム側で操作対象になっているスロット番号を比較する。任意のItemStack自体はこの数値に含まれない。</td><td>property_bag / collection項目</td></tr></tbody></table>
@@ -825,7 +825,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-hotbar_renderer">hotbar_renderer</h2>
 <p>各ホットバースロットに関連する操作中の表示を描く。ホットバー全体の背景・アイテムモデル・個数表示を一括生成する部品ではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hotbar_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hotbar_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#collection_index</code></td><td>integer</td><td>-1（欠落時）</td><td>現在のcollection項目の0起点番号。通常はcollection_detailsとcollection部品が作る項目情報を使う。hotbar_rendererの共通描画経路はこの番号とゲーム側で操作対象になっているスロット番号を比較する。任意のItemStack自体はこの数値に含まれない。</td><td>property_bag / collection項目</td></tr></tbody></table>
@@ -861,7 +861,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-hover_text_renderer">hover_text_renderer</h2>
 <p>#hover_textの文字列をゲームのツールチップ機構へ渡す。現在の入力方式やカーソル／選択位置を使って説明を表示する。ホバー判定そのものを作るrendererではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hover_text_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hover_text_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>hover_text_max_width</code></td><td>integer</td><td><code>0</code></td><td>正の数ならUI座標単位で最大幅を制限し、必要なら折り返す。0以下はこの幅制限を適用しない。文字数ではない。</td><td>コントロールの直下</td></tr></tbody></table>
 <h3>データ入力・property_bag</h3>
@@ -883,7 +883,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-hud_player_renderer">hud_player_renderer</h2>
 <p>HUD用の現在プレイヤーモデルを描く。スキン・装備・状態・ポーズを実プレイヤーから取得し、HUDとして必要な間だけ表示する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hud_player_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hud_player_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -911,7 +911,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-hunger_renderer">hunger_renderer</h2>
 <p>現在プレイヤーの食料値を10個の満腹度アイコンで表示する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hunger_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;hunger_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -942,7 +942,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-inventory_item_renderer">inventory_item_renderer</h2>
 <p>アイテムデータからアイコン・モデル・エンチャントの光沢を描画する。旗・盾・壺・防具などの追加データに応じて外見を変える。個数ラベル・耐久バー・クリック操作は子部品等で別に作る。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;inventory_item_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;inventory_item_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#item_id_aux</code></td><td>integer</td><td><code>-1</code></td><td>アイテムの種類番号を上位16ビット、補助値を下位15ビットにまとめた整数。下位の32768のフラグはエンチャントの光沢を表す。種類番号は対象バージョンのゲームが供給する値を使う。 -1を渡すとアイテム表示を解除する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#charged_item</code></td><td>integer</td><td><code>0</code></td><td>クロスボウに装填されたアイテムを示す整数データ。真偽値ではない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#item_custom_color</code></td><td>integer</td><td><code>-1</code></td><td>染色等のカスタム色の整数。-1では色の上書きなし。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#disabled_filter_visible</code></td><td>boolean</td><td><code>false</code></td><td>使用不可・フィルター対象としてアイテムを暗くする。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#filtered_light_multiplier</code></td><td>number</td><td>フィルター有効時0.25、無効時1</td><td>フィルター有効時の明るさ倍率。0なら黒、1なら元の明るさ。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#item_pickup_time</code></td><td>非負のinteger</td><td><code>0</code></td><td>アイテムを取得した時刻。ゲームが供給する時刻の値を使い、取得時の演出に利用する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#show_item_pickup</code></td><td>boolean</td><td><code>true</code></td><td>アイテム取得時の演出を許可する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#fade_in_icon_time_seconds</code></td><td>number</td><td><code>0</code></td><td>アイコン表示の基準時刻。経過時間をゲーム側の時刻と比較し、基準時刻+0.3秒まで表示を抑える。単に「フェードの長さ」を指定する数値ではない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#item_lodestone_tracking_handle</code></td><td>integer</td><td><code>0</code></td><td>ロードストーンコンパスの追跡先を示すハンドル。ゲームからの値を維持する。座標配列ではない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#armor_trim_material</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>防具の装飾素材名。モデルの装飾表示に利用する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#collection_name</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>所属するコレクション名。recipe_bookではレシピ本の表示に合わせた処理を選ぶ。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#should_show_bundle_open_back</code></td><td>boolean</td><td><code>false</code></td><td>開いたバンドルの背面部分を表示する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#should_show_bundle_open_front</code></td><td>boolean</td><td><code>false</code></td><td>開いたバンドルの前面部分を表示する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#banner_type</code></td><td>integer</td><td><code>0</code></td><td>旗の種類情報。アイテム側のTypeに対応するゲームの整数を引き継ぐ。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#shield_base_color</code></td><td>integer</td><td>盾の構築時0、描画時に値がない場合-1</td><td>盾の地色。染料の番号を使う。-1はカスタム地色なし。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#shield_is_active</code></td><td>boolean</td><td><code>false</code></td><td>盾が使用中の状態として描画する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#banner_patterns</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>旗・盾の模様番号を十進数で並べ、各番号の後ろに_を付ける。例0_1_。配列ではない。#banner_colorsと同じ順に対応する。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#banner_colors</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>各模様の染料番号を十進数で並べ、各番号の後ろに_を付ける。例15_1_。配列ではない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#decorated_pot_sherds</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>飾り壺の4面のアイテム識別子を@で連結した文字列。最後にも@を付ける。4項目そろった場合に壺へ設定する。JSON配列ではない。</td><td>property_bag / bindingの出力先</td></tr><tr><td><code>#serialized_actor_pose</code></td><td>integer</td><td><code>0</code></td><td>防具立てのPoseを表す整数。名前にserializedがあるがJSON文字列でも回転の子オブジェクトでもない。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -990,7 +990,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-live_horse_renderer">live_horse_renderer</h2>
 <p>#entity_idで取得した生きたエンティティを、馬のプレビューとしてUI内へ描画する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;live_horse_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;live_horse_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#entity_id</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>ワールド内のエンティティを識別する十進数の文字列ID。符号付き整数を文字列として渡す。種類名minecraft:horseを指定して生成する入力ではない。画面が供給する既存個体のIDを使う。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -1017,7 +1017,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-live_player_renderer">live_player_renderer</h2>
 <p>ローカルプレイヤーをUI内に立体表示する。装備・スキン・動作などは現在のプレイヤーから取得する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;live_player_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;live_player_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1042,7 +1042,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-locator_bar">locator_bar</h2>
 <p>他プレイヤーの方角をドットと上下矢印で表示するlocator bar。ゲームが管理するロケーター対象一覧を使い、JSONで対象配列を作る部品ではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;locator_bar&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;locator_bar&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1062,7 +1062,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-mob_effects_renderer">mob_effects_renderer</h2>
 <p>実プレイヤーの有効なステータス効果をアイコンとして並べる。効果名をJSONの配列で入力するrendererではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;mob_effects_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;mob_effects_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1083,7 +1083,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-name_tag_renderer">name_tag_renderer</h2>
 <p>#playernameを名前タグとして表示し、背後に矩形を描画する。文字列が変わると文字の表示を更新する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;name_tag_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;name_tag_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>text_color</code></td><td>RGB/RGBA配列または色名</td><td><code>[1, 1, 1, 1]</code></td><td>名前の文字色。共通の色名・配列形式を使う。</td><td>コントロールの直下</td></tr><tr><td><code>background_color</code></td><td>RGB/RGBA配列または色名</td><td><code>[0, 0, 0, 0.25]</code></td><td>名前の背景色。未指定時は透明度0.25の黒。明示するとRGBAを置き換える。</td><td>コントロールの直下</td></tr></tbody></table>
 <h4>text_colorの入力値</h4>
@@ -1115,7 +1115,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-panorama_renderer">panorama_renderer</h2>
 <p>imageとinput_panelの設定を読み込んだうえで、横長のパノラマ画像を描画する。横ドラッグと慣性による画像領域の移動を処理する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;panorama_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;panorama_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>texture</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>画像のパス。通常のimageの読み込みを追加している。</td><td>コントロールの直下</td></tr><tr><td><code>texture_file_system</code></td><td>string</td><td><code>&quot;InUserPackage&quot;</code></td><td>画像パスを解決する読み込み元。</td><td>コントロールの直下</td></tr><tr><td><code>uv</code></td><td>number[2]</td><td><code>[0, 0]</code></td><td>元画像の切り出し開始ピクセル座標[x,y]。</td><td>コントロールの直下</td></tr><tr><td><code>uv_size</code></td><td>number[2]</td><td>画像サイズ</td><td>切り出し領域のピクセル幅と高さ。</td><td>コントロールの直下</td></tr><tr><td><code>color</code></td><td>RGBA arrayまたは色名</td><td><code>[1, 1, 1, 1]</code></td><td>画像に掛ける色。</td><td>コントロールの直下</td></tr><tr><td><code>nineslice_size</code></td><td>numberまたはnumber[4]</td><td><code>0</code></td><td>単一値なら四辺共通、4要素なら[left,top,right,bottom]。</td><td>コントロールの直下</td></tr><tr><td><code>tiled</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>繰り返す軸。</td><td>コントロールの直下</td></tr><tr><td><code>tiled_scale</code></td><td>number[2]</td><td><code>[1, 1]</code></td><td>繰り返し単位の拡大率[x,y]。</td><td>コントロールの直下</td></tr><tr><td><code>clip_direction</code></td><td>string</td><td><code>&quot;none&quot;</code></td><td>画像の切り取り方向。</td><td>コントロールの直下</td></tr><tr><td><code>clip_ratio</code></td><td>number</td><td><code>0</code></td><td>切り捨てる割合。</td><td>コントロールの直下</td></tr><tr><td><code>clip_pixelperfect</code></td><td>boolean</td><td><code>true</code></td><td>切り取り幅を元画像のピクセル単位へ揃える。</td><td>コントロールの直下</td></tr><tr><td><code>pixel_perfect</code></td><td>boolean</td><td><code>true</code></td><td>画像のピクセル配置を揃える。</td><td>コントロールの直下</td></tr><tr><td><code>keep_ratio</code></td><td>boolean</td><td><code>true</code></td><td>画像の縦横比を保つ。</td><td>コントロールの直下</td></tr><tr><td><code>fill</code></td><td>boolean</td><td><code>false</code></td><td>表示領域を埋める設定。</td><td>コントロールの直下</td></tr><tr><td><code>default_size_scales_to_ratio</code></td><td>boolean</td><td><code>false</code></td><td>既定サイズを画像の比率へ合わせる。</td><td>コントロールの直下</td></tr><tr><td><code>zip_folder</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>ZIP内の読み込み先。</td><td>コントロールの直下</td></tr><tr><td><code>grayscale</code></td><td>boolean</td><td><code>false</code></td><td>グレースケール化。</td><td>コントロールの直下</td></tr><tr><td><code>bilinear</code></td><td>boolean</td><td><code>false</code></td><td>バイリニア補間。</td><td>コントロールの直下</td></tr><tr><td><code>force_texture_reload</code></td><td>boolean</td><td><code>false</code></td><td>画像を再読み込みする。</td><td>コントロールの直下</td></tr><tr><td><code>allow_debug_missing_texture</code></td><td>boolean</td><td><code>true</code></td><td>不足テクスチャの診断表示を許可する。</td><td>コントロールの直下</td></tr><tr><td><code>color_corrected</code></td><td>boolean</td><td><code>false</code></td><td>色補正を使う。</td><td>コントロールの直下</td></tr><tr><td><code>gesture_tracking_button</code></td><td>string</td><td><code>&quot;&quot;</code></td><td>入力のドラッグ追跡に使うボタンID。input_panelの読み込み処理を追加している。</td><td>コントロールの直下</td></tr><tr><td><code>rotation</code></td><td>string</td><td><code>&quot;none&quot;</code></td><td>パノラマの回転方式。読み込み時に選択する。</td><td>コントロールの直下</td></tr></tbody></table>
 <h4>texture_file_systemの入力値</h4>
@@ -1204,7 +1204,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-paper_doll_renderer">paper_doll_renderer</h2>
 <p>選択中のスキン、UUIDで指定されたプレイヤー、スキンパックの項目などをUI内に立体表示する。回転に加え、アニメーションと音の再生指示も受け取る。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;paper_doll_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;paper_doll_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>use_selected_skin</code></td><td>boolean</td><td><code>true</code></td><td>現在選択中のスキンを使う経路を有効にする。falseではスキンパックの#pack_id・#skin_idx等の経路を使う。</td><td>コントロールの直下</td></tr><tr><td><code>use_uuid</code></td><td>boolean</td><td><code>false</code></td><td>#player_uuidでプレイヤーのスキンを取得する経路を使う。</td><td>コントロールの直下</td></tr><tr><td><code>use_player_paperdoll</code></td><td>boolean</td><td><code>false</code></td><td>ゲームが管理するプレイヤー用paper dollの表示状態を利用する。独立した任意エンティティの生成ではない。</td><td>コントロールの直下</td></tr><tr><td><code>use_skin_gui_scale</code></td><td>boolean</td><td><code>false</code></td><td>スキンのプレビュー用GUI倍率を表示サイズに反映する。</td><td>コントロールの直下</td></tr><tr><td><code>camera_tilt_degrees</code></td><td>number</td><td><code>0</code></td><td>カメラの傾き。単位は度。</td><td>コントロールの直下</td></tr><tr><td><code>rotation</code></td><td>string</td><td><code>&quot;none&quot;</code></td><td>回転方式。gesture_xでは入力コントロール側からドラッグデータを渡す。</td><td>コントロールの直下</td></tr><tr><td><code>starting_rotation</code></td><td>number</td><td><code>0</code></td><td>開始時のY軸回転角。単位は度。</td><td>コントロールの直下</td></tr></tbody></table>
 <h4>use_selected_skinの入力値</h4>
@@ -1260,7 +1260,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-profile_image_renderer">profile_image_renderer</h2>
 <p>プロフィール画像を非同期に取得してUIへ描画する。#profile_image_optionsは子オブジェクトそのものではなく、JSONを含む文字列。typeによって画像の供給元と必要なIDが変わる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;profile_image_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;profile_image_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>#profile_image_options</code></td><td>JSONを格納したstring</td><td><code>&quot;&quot;</code></td><td>空文字列・不正なJSON・0〜7以外のtypeは画像要求なしとして扱う。urlはtextureのリソースパックパスとは異なる画像取得先。</td><td>property_bag / bindingの出力先</td></tr></tbody></table>
@@ -1302,7 +1302,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-progress_bar_renderer">progress_bar_renderer</h2>
 <p>property_bagに接続した現在量と総量を割り、横方向の塗りつぶしバーを描く。スタック分割・耐久度・収納量に同じrendererが使われる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;progress_bar_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;progress_bar_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>primary_color</code></td><td>RGB/RGBA数値配列</td><td><code>[0,1,0,1]</code></td><td>充填部分の色。通常モードで使用する。is_durability=trueの場合は耐久比率から計算する色に置き換える。</td><td>control直下</td></tr><tr><td><code>secondary_color</code></td><td>RGB/RGBA数値配列</td><td><code>[0.3,0.3,0.3,1]</code></td><td>未充填部分/背景の色。primary_colorと重ねて横方向バーを作る。</td><td>control直下</td></tr><tr><td><code>full_storage_color</code></td><td>RGB/RGBA数値配列</td><td>未指定時は満量でもprimary_colorを使う</td><td>is_storage_bar=trueかつ比率がちょうど1のときの充填色。指定すると満量色の切り替えが有効になる。</td><td>control直下</td></tr></tbody></table>
 <h4>primary_colorの入力値</h4>
@@ -1368,7 +1368,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-progress_indicator_renderer">progress_indicator_renderer</h2>
 <p>プレイヤー操作に連動するHUDの円形フィードバック表示。任意の #progress 値を与える一般的なローディングスピナーではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;progress_indicator_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;progress_indicator_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1388,7 +1388,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-qr_code_renderer">qr_code_renderer</h2>
 <p>#qr_code_contentの文字列をQRコード画像に変換し、コントロールの矩形へ描画する。内容や色が変わると画像を作り直す。空文字列ではQRを描かない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;qr_code_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;qr_code_renderer&quot;</code></td></tr></tbody></table>
 <h3>通常プロパティ・テンプレート設定</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>background_color</code></td><td>RGBA arrayまたは色名</td><td><code>[1, 1, 1, 1]</code></td><td>QRの背景色。creditsのプロパティではなく、このrendererの生成枝で読み込まれる。</td><td>コントロールの直下</td></tr><tr><td><code>foreground_color</code></td><td>RGBA arrayまたは色名</td><td><code>[0, 0, 0, 1]</code></td><td>QRの暗いモジュール側の色。読み取りやすさのため背景と十分な明暗差を作る。</td><td>コントロールの直下</td></tr></tbody></table>
 <h4>background_colorの入力値</h4>
@@ -1422,7 +1422,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-splash_text_renderer">splash_text_renderer</h2>
 <p>splashes.jsonから条件に合う文字列を1件選び、傾いた黄色いスプラッシュとして脈動させて描画する。textや#splash_textを読むrendererではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;splash_text_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;splash_text_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1452,7 +1452,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-trial_time_renderer">trial_time_renderer</h2>
 <p>体験版の残り時間を分:秒として表示する。値は体験ワールドの経過tickからゲーム側が計算する。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;trial_time_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;trial_time_renderer&quot;</code></td></tr></tbody></table>
 
 
 <p>専用の通常プロパティはない。位置・寸法・透明度などは上の共通設定で指定する。</p>
@@ -1489,7 +1489,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-vignette_renderer">vignette_renderer</h2>
 <p>画面の縁を暗くするビネット。通常はゲーム内の明るさ/状態から強さを求めるが、property_bagのopacity_overrideで計算元を上書きできる。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;vignette_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;vignette_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>opacity_override</code></td><td>number</td><td>未指定時はゲームが求めた明るさ/状態の基準値</td><td>property_bagへ#なしで指定する。名前と直感が逆になりやすいが、動作は(1-指定値)×0.9を周縁の暗さにする。0は強く暗くし、1は表示しない。共通alphaとして直接使う値ではない。値の下限上限を自動で0〜1へ制限しないため、通常は0〜1で指定する。</td><td>property_bag（#を付けない）</td></tr></tbody></table>
@@ -1514,7 +1514,7 @@
 <p><a href="#index">Indexへ戻る</a></p>
 <h2 id="r-web_view_renderer">web_view_renderer</h2>
 <p>ゲームが既に管理しているWebViewを、UIコントロールの矩形へ配置し、画面の状態に応じて表示／更新する。JSONにURLを書く汎用ブラウザーではない。</p>
-<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;web_view_renderer&quot;</code></td></tr><tr><td>利用範囲</td><td>通常版Windows Client 1.26.10</td></tr></tbody></table>
+<table border="1"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>renderer</td><td><code>&quot;web_view_renderer&quot;</code></td></tr></tbody></table>
 
 <h3>データ入力・property_bag</h3>
 <table border="1"><thead><tr><th>Name</th><th>Type</th><th>Default Value / 省略時</th><th>Description</th><th>指定場所</th></tr></thead><tbody><tr><td><code>interfaceType</code></td><td>integer</td><td><code>1</code></td><td>#記号を付けずproperty_bag内のinterfaceTypeとして渡す。既存のWebインターフェースを選択する番号。ゲームの供給処理で0と1を確認。文字列enumではない。</td><td>property_bag（#を付けない）</td></tr></tbody></table>
