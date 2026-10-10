@@ -5,7 +5,7 @@ Minecraft Bedrockのアドオンクリエイター向けのmaterial・JSON UI解
 - [公開サイト](https://kaim-ru.github.io/bedrock-creator-reference/)
 - [material](https://kaim-ru.github.io/bedrock-creator-reference/material.html)：50項目、子プロパティ、描画の設定例
 - [JSON UI](https://kaim-ru.github.io/bedrock-creator-reference/jsonui.html)：502項目、子プロパティ、表示・翻訳・データ接続の説明
-- [renderer](https://kaim-ru.github.io/bedrock-creator-reference/renderers.html)：実装で確認した45種類とスキーマ候補7種類、専用設定、入力値、必要なデータ、公式例
+- [renderer](https://kaim-ru.github.io/bedrock-creator-reference/renderers.html)：通常版45種類と別版向け・非対応7名称。161項目の設定・データ入力、JSON文字列の子キー、旗の模様44種類・染料16色、描画動作、公式例
 
 CSS・JavaScriptを使用せず、HTMLのみで読めます。`main`ブランチのルートをGitHub Pagesで公開します。
 
